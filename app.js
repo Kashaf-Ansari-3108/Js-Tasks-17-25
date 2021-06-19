@@ -121,16 +121,7 @@
 
 // 9. Write a program to identify the smallest number in the
 // given array.
-// var A = [24, 53, 78, 91, 12];
-// var smallest= 0;
-
-// for (i=0; i>=smallest;i++){
-//     if (A[i]<smallest) {
-//         var smallest=A[i];
-//     }
-// }
-// document.write("Array Items: "+[A]);
-// document.write("<br>The Smallest Number is "+smallest);
+// 
 
 // var A = [24, 53, 78, 91, 12];
 // var min = Number.POSITIVE_INFINITY
@@ -208,7 +199,7 @@
 // 8. Write a program to replace all occurrences of “and” in the
 // string with “&” and display the result in your browser.
 // var message = "Ali and Sami are best friends.They play cricket and football together.";
-// var res = message.replaceAll("and", "&");
+// var res = message.replace(/and/g, "&");
 // document.write(message);
 // document.write("<br>After Replacement: "+ res);
 
@@ -232,7 +223,7 @@
 // 11. Write a program that takes user input. Convert and
 // show the input in title case.
 // var string = prompt("Enter Your Word");   
-// var s = string.charAt(0).toUpperCase() + string.substr(1).toLowerCase();
+// var s = string.slice(0,1).toUpperCase() + string.slice(1).toLowerCase();
 // document.write("User Input: "+string);
 // document.write("<br>Title Case: "+s);
 
@@ -257,18 +248,20 @@
 // ASCII code of . is 46
 // ASCII code of @ is 64
 
-
-
-// var fullName = prompt('Enter your full name');
-// var correct_way = /^[A-Za-z]+$/;
-
-// if (fullName.match(correct_way)){
-//     alert(fullName)
+// var name = prompt("Enter Your Name");
+// var symbol = ["@",".",",","!"];
+// matchFound = false;
+// for(var i = 0; i < name.length; i++){
+//     for(var j = 0; j < symbol.length; j++){
+//         if(name[i] === symbol[j]){
+//             matchFound = true;
+//             alert("Please! Enter Valid Name");
+//         }
+//     }
 // }
-// else{
-//     alert ('Please enter correct user name');
+// if(matchFound == false){
+//     alert(name);
 // }
-
 
 
 // 14. You have an array
@@ -303,17 +296,26 @@
 // prompt the user to enter a valid password.
 // For character codes of a-z, A-Z & 0-9, refer to ASCII
 // table at the end of this document.
-// var pass = prompt("Enter Your Password");
-// var correct_way = /^[A-Za-z0-9]+$/;
 
-// if (pass.match(correct_way)){
+
+// var pass = prompt("Enter Your Password");
+// var letterNumber = /^[0-9a-zA-Z]+$/;
+// var number =  /^[0-9]+$/;
+
+// if(pass.length < 6){
+//     alert("Invalid Password!\nIt must at least 6 characters long");
+// }
+// else if((pass.slice(0,1).match(number))){
+//     alert("Invalid Password!\nIt should not start with a number")
+// }
+// else if((pass.match(letterNumber))){
 //     alert(pass)
 // }
 // else{
-//     alert ('Please enter correct pass');
-// } 
+//     alert("Invalid Password!\nIt should only contain alphabets and numbers");
+// }
 
-
+ 
 // 16. Write a program to convert the following string to an
 // array using string split method.
 // var university = “University of Karachi”;
